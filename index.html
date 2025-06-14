@@ -1,595 +1,644 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnaBear - Makeup mods</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400&family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnaBear - Makeup mods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400&family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
     /* === Global Dark Theme === */
     :root {
-      --void: #0a0612;
-      --ether: #4d2d73;
-      --pixie: #c77dff;
-      --moonlight: #e0aaff;
-      --blood: #ff6d6d;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        --void: #0a0612;
+        --ether: #4d2d73;
+        --pixie: #c77dff;
+        --moonlight: #e0aaff;
+        --blood: #ff6d6d;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--void);
-      color: #e0e0e0;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      overflow-x: hidden;
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--void);
+        color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        overflow-x: hidden;
     }
 
-    h1, h2, h3 {
-      font-family: 'Cinzel Decorative', serif;
-      font-weight: 700;
-      color: var(--moonlight);
-      text-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+    h1,
+    h2,
+    h3 {
+        font-family: 'Cinzel Decorative', serif;
+        font-weight: 700;
+        color: var(--moonlight);
+        text-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
     }
 
     .script-font {
-      font-family: 'IM Fell DW Pica SC', serif;
-      font-size: 1.8em;
-      letter-spacing: 1px;
+        font-family: 'IM Fell DW Pica SC', serif;
+        font-size: 1.8em;
+        letter-spacing: 1px;
     }
 
     /* === Scrollbar === */
     ::-webkit-scrollbar {
-      width: 8px;
-      background: var(--void);
+        width: 8px;
+        background: var(--void);
     }
+
     ::-webkit-scrollbar-thumb {
-      background: var(--ether);
-      border-radius: 10px;
+        background: var(--ether);
+        border-radius: 10px;
     }
 
     /* === Hero Section === */
     .hero {
-      background: radial-gradient(circle at center, var(--ether), var(--void));
-      text-align: center;
-      padding: 120px 20px;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--pixie);
+        background: radial-gradient(circle at center, var(--ether), var(--void));
+        text-align: center;
+        padding: 120px 20px;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--pixie);
     }
 
     .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-  /*     background: url('https://img.freepik.com/free-vector/gothic-lace-pattern-black-background_53876-97185.jpg') center/cover; */
-      opacity: 0.15;
-      z-index: 0;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /*     background: url('https://img.freepik.com/free-vector/gothic-lace-pattern-black-background_53876-97185.jpg') center/cover; */
+        opacity: 0.15;
+        z-index: 0;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
+        position: relative;
+        z-index: 1;
     }
 
     .logo {
-      font-size: 4.5em;
-      margin: 0;
-      background: linear-gradient(to right, var(--pixie), var(--blood));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      filter: drop-shadow(0 0 5px var(--pixie));
+        font-size: 4.5em;
+        margin: 0;
+        background: linear-gradient(to right, var(--pixie), var(--blood));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        filter: drop-shadow(0 0 5px var(--pixie));
     }
 
     .tagline {
-      font-size: 1.5em;
-      margin: 20px 0;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+        font-size: 1.5em;
+        margin: 20px 0;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .btn {
-      background: linear-gradient(45deg, var(--pixie), var(--blood));
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      font-size: 1.1em;
-      border-radius: 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-      font-family: 'Cinzel Decorative', serif;
-      letter-spacing: 1px;
-      position: relative;
-      overflow: hidden;
+        background: linear-gradient(45deg, var(--pixie), var(--blood));
+        color: white;
+        border: none;
+        height: 50px;
+        /* padding: 12px 30px; */
+        font-size: 1.1em;
+        border-radius: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow);
+        font-family: 'Cinzel Decorative', serif;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
     }
 
     .btn::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      transform: rotate(45deg);
-      transition: all 0.5s ease;
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transform: rotate(45deg);
+        transition: all 0.5s ease;
     }
 
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(201, 125, 255, 0.4);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(201, 125, 255, 0.4);
     }
 
     .btn:hover::before {
-      left: 100%;
+        left: 100%;
     }
 
     /* === New Parallax Section === */
     .parallax {
-      background-image: url('assets/images/house_parallex.png');
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      border-top: 1px solid var(--pixie);
-      border-bottom: 1px solid var(--pixie);
+        background-image: url('assets/images/house_parallex.png');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-top: 1px solid var(--pixie);
+        border-bottom: 1px solid var(--pixie);
     }
 
     .parallax::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(10, 6, 18, 0.7);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10, 6, 18, 0.7);
     }
 
     .parallax-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 40px;
-      max-width: 800px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 40px;
+        max-width: 800px;
     }
 
     .parallax h2 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      text-shadow: 0 0 15px var(--pixie);
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px var(--pixie);
     }
 
     /* === Gallery === */
     .gallery {
-      padding: 80px 20px;
-      text-align: center;
-      /* background: url('https://img.freepik.com/free-vector/gothic-lace-pattern-black-background_53876-97185.jpg') center/cover; */
-      border-bottom: 1px solid var(--pixie);
+        padding: 80px 20px;
+        text-align: center;
+        /* background: url('https://img.freepik.com/free-vector/gothic-lace-pattern-black-background_53876-97185.jpg') center/cover; */
+        border-bottom: 1px solid var(--pixie);
     }
 
     .gallery h2 {
-      position: relative;
-      display: inline-block;
+        position: relative;
+        display: inline-block;
     }
 
     .gallery h2::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--pixie), transparent);
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--pixie), transparent);
     }
 
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
     }
 
     .gallery-item {
-      position: relative;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      border: 1px solid var(--ether);
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        border: 1px solid var(--ether);
     }
 
     .gallery-item:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(201, 125, 255, 0.5);
-      border-color: var(--pixie);
+        transform: scale(1.03);
+        box-shadow: 0 0 20px rgba(201, 125, 255, 0.5);
+        border-color: var(--pixie);
     }
 
     .gallery-item img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      filter: brightness(0.9);
-      transition: filter 0.3s ease;
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        filter: brightness(0.9);
+        transition: filter 0.3s ease;
     }
 
     .gallery-item:hover img {
-      filter: brightness(1);
+        filter: brightness(1);
     }
 
     .gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(10, 6, 18, 0.8);
-      backdrop-filter: blur(5px);
-      padding: 15px;
-      border-top: 1px solid var(--pixie);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(10, 6, 18, 0.8);
+        backdrop-filter: blur(5px);
+        padding: 15px;
+        border-top: 1px solid var(--pixie);
     }
 
     /* === Shop === */
     .shop {
-      padding: 80px 20px;
-      text-align: center;
-      background: linear-gradient(180deg, var(--void), #140c22);
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(180deg, var(--void), #140c22);
     }
 
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+        display: flex;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
     }
 
     .product-card {
-      background: rgba(20, 12, 34, 0.7);
-      border-radius: 5px;
-      padding: 20px;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      border: 1px solid var(--ether);
-      position: relative;
-      overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        background: rgba(20, 12, 34, 0.7);
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        border: 1px solid var(--ether);
+        position: relative;
+        overflow: hidden;
+        width: 400px;
+        height: 200px;
+        gap: 10px;
     }
 
     .product-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--pixie), var(--blood));
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--pixie), var(--blood));
     }
 
     .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(201, 125, 255, 0.3);
-      border-color: var(--pixie);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(201, 125, 255, 0.3);
+        border-color: var(--pixie);
+    }
+
+    .product-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flexrow {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .product-image-container {
+        width: 200px;
+        /* or 100% or any fixed value */
+        aspect-ratio: 1 / 1;
+        /* makes it a square */
+        overflow: hidden;
+        position: relative;
+    }
+
+    .product-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* ensures the image fills and crops to square */
+        object-position: center;
+        display: block;
     }
 
     .price {
-      background: linear-gradient(45deg, var(--pixie), var(--blood));
-      color: white;
-      display: inline-block;
-      padding: 5px 15px;
-      border-radius: 0;
-      font-weight: bold;
-      margin: 10px 0;
-      font-family: 'Cinzel Decorative', serif;
-      letter-spacing: 1px;
+        background: linear-gradient(45deg, var(--pixie), var(--blood));
+        color: white;
+        display: inline-block;
+        padding: 0px 15px;
+        height: 50px;
+        border-radius: 0;
+        font-weight: bold;
+        /* margin: 10px 0; */
+        font-family: 'Cinzel Decorative', serif;
+        letter-spacing: 1px;
+        /* align-items: center; */
+        align-content: center;
     }
 
     /* === Bio === */
     .bio {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      /* background: url('assets/images/annabear.png') center/cover; */
-      border-bottom: 1px solid var(--pixie);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        /* background: url('assets/images/annabear.png') center/cover; */
+        border-bottom: 1px solid var(--pixie);
     }
 
     .bio-image {
-      flex: 1;
-      min-width: 300px;
-      padding: 20px;
-      position: relative;
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+        position: relative;
     }
 
     .bio-image::before {
-      content: "";
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      border: 1px solid var(--pixie);
-      pointer-events: none;
-      z-index: 1;
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 1px solid var(--pixie);
+        pointer-events: none;
+        z-index: 1;
     }
 
     .bio-image img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      filter: sepia(0.2) contrast(1.1);
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        filter: sepia(0.2) contrast(1.1);
     }
 
     .bio-text {
-      flex: 1;
-      min-width: 300px;
-      padding: 20px;
-      position: relative;
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+        position: relative;
     }
 
     .bio-text::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(to bottom, transparent, var(--pixie), transparent);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, var(--pixie), transparent);
     }
 
     /* === Product Info === */
     .product-info {
-      padding: 80px 20px;
-      text-align: center;
-      background: linear-gradient(180deg, #140c22, var(--void));
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(180deg, #140c22, var(--void));
     }
 
     .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
     }
 
     .feature {
-      background: rgba(20, 12, 34, 0.7);
-      padding: 30px;
-      border-radius: 5px;
-      box-shadow: var(--shadow);
-      max-width: 250px;
-      border: 1px solid var(--ether);
-      position: relative;
-      overflow: hidden;
+        background: rgba(20, 12, 34, 0.7);
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: var(--shadow);
+        max-width: 250px;
+        border: 1px solid var(--ether);
+        position: relative;
+        overflow: hidden;
     }
 
     .feature::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--pixie), var(--blood));
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--pixie), var(--blood));
     }
 
     .feature i {
-      font-size: 2em;
-      color: var(--pixie);
-      margin-bottom: 15px;
+        font-size: 2em;
+        color: var(--pixie);
+        margin-bottom: 15px;
     }
 
     /* === Footer === */
     footer {
-      background: #0a0612;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid var(--pixie);
-      position: relative;
+        background: #0a0612;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        border-top: 1px solid var(--pixie);
+        position: relative;
     }
 
     footer::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--pixie), transparent);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--pixie), transparent);
     }
 
     .social-icons {
-      margin: 20px 0;
+        margin: 20px 0;
     }
 
     .social-icons a {
-      color: var(--moonlight);
-      font-size: 1.5em;
-      margin: 0 15px;
-      transition: all 0.3s ease;
-      text-shadow: 0 0 5px var(--pixie);
+        color: var(--moonlight);
+        font-size: 1.5em;
+        margin: 0 15px;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 5px var(--pixie);
     }
 
     .social-icons a:hover {
-      color: var(--blood);
-      transform: scale(1.2);
+        color: var(--blood);
+        transform: scale(1.2);
     }
 
     .copyright {
-      font-size: 0.9em;
-      opacity: 0.7;
+        font-size: 0.9em;
+        opacity: 0.7;
     }
 
     /* === Tooltip === */
     .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dashed var(--pixie);
-      cursor: help;
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dashed var(--pixie);
+        cursor: help;
     }
 
     .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 200px;
-      background-color: var(--ether);
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 0.9em;
+        visibility: hidden;
+        width: 200px;
+        background-color: var(--ether);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 0.9em;
     }
 
     .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
+        visibility: visible;
+        opacity: 1;
     }
 
     /* === Responsive === */
     @media (max-width: 768px) {
-      .hero {
-        padding: 80px 20px;
-      }
-      .logo {
-        font-size: 3em;
-      }
-      .bio {
-        flex-direction: column;
-      }
-      .bio-text::before {
-        display: none;
-      }
-      .parallax {
-        background-attachment: scroll;
-        height: 400px;
-      }
+        .hero {
+            padding: 80px 20px;
+        }
+
+        .logo {
+            font-size: 3em;
+        }
+
+        .bio {
+            flex-direction: column;
+        }
+
+        .bio-text::before {
+            display: none;
+        }
+
+        .parallax {
+            background-attachment: scroll;
+            height: 400px;
+        }
     }
-  </style>
+    </style>
 </head>
+
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="logo script-font">AnaBear</h1>
-      <p class="tagline">Dark, dreamy makeup mods for FFXIV — because your WoL deserves to slay in the void.</p>
-      <button class="btn">Browse Mods</button>
-    </div>
-  </section>
-
-  <!-- New Parallax Section -->
-  <section class="parallax">
-    <div class="parallax-content">
-      <h2>Voidborn Collection</h2>
-      <p>Ascian-inspired textures that blend seamlessly with FFXIV's dark aesthetic. Limited-time release!</p>
-      <button class="btn">Get the Mod</button>
-    </div>
-  </section>
-
-  <!-- Product Info -->
-  <section class="product-info">
-    <h2>Why Choose AnaBear?</h2>
-    <p>Glamour is the true endgame.</p>
-    <div class="features">
-      <div class="feature">
-        <i class="fas fa-moon"></i>
-        <h3>Lore-Friendly</h3>
-        <p>Inspired by in-game factions (Ascians, Ishgard, etc.)</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-code-branch"></i>
-        <h3>Modular</h3>
-        <p>Mix-and-match layers for unique combos</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-user-check"></i>
-        <h3>Race-Tested</h3>
-        <p>Works on Viera, Hrothgar, and all others</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Shop -->
-  <section class="shop">
-    <h2>Mod Collection</h2>
-    <!-- <p>All mods priced at $5</p> -->
-    <div class="products">
-      <div class="product-card">
-        <img src="assets/images/charm.png" alt="charm" style="width:100%">
-        <h3>Charm</h3>
-        <p>Red/black Zodiark-inspired textures</p>
-        <div class="price">$5</div>
-        <button class="btn">Buy on Kofi</button>
-      </div>
-      <div class="product-card">
-        <img src="assets/images/relax.png" alt="relax" style="width:100%">
-        <h3>Relax</h3>
-        <p>ShB Thancred-style face paint</p>
-        <div class="price">$5</div>
-        <button class="btn">Buy on Kofi</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200/4d2d73/ffffff?text=Sin+Eater" alt="Sin Eater" style="width:100%">
-        <h3>Sin Eater</h3>
-        <p>Pale glow & golden cracks</p>
-        <div class="price">$5</div>
-        <button class="btn">Buy on Kofi</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200/4d2d73/ffffff?text=Voidsent" alt="Voidsent" style="width:100%">
-        <h3>Voidsent</h3>
-        <p>Purple corruption effects</p>
-        <div class="price">$5</div>
-        <button class="btn">Buy on Kofi</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bio -->
-  <section class="bio">
-    <div class="bio-image">
-      <img src="assets/images/annabear.png" alt="AnaBear Creator">
-    </div>
-    <div class="bio-text">
-      <h2>The Modder Behind the Magic</h2>
-      <p class="script-font">"By the Twelve! I'm Ana, a DNC main and texture witch."</p>
-      <p>Since Shadowbringers, I've been creating dark fantasy mods that blend seamlessly with FFXIV's aesthetic. All mods are tested on all races.</p>
-      <p><span class="tooltip">Modding Ethics <span class="tooltiptext">No stolen assets, always credit references!</span></span></p>
-    </div>
-  </section>
-
-
-  <!-- Footer -->
-  <footer>
-    <h2 class="script-font">AnaBear</h2>
-    <p>Dark glamour for darker adventures.</p>
-    <div class="social-icons">
-      <a href="#"><i class="fa-solid fa-mug-saucer"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-   
-    </div>
-    <p class="copyright">© 2023 AnaBear | Not affiliated with SQUARE ENIX | Pay in Gil via PayPal</p>
-  </footer>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="logo script-font">AnaBear</h1>
+            <p class="tagline">Dark, dreamy makeup mods for FFXIV — because your WoL deserves to slay in the void.</p>
+            <button class="btn">Browse Mods</button>
+        </div>
+    </section>
+    <!-- New Parallax Section -->
+    <section class="parallax">
+        <div class="parallax-content">
+            <h2>Voidborn Collection</h2>
+            <p>Ascian-inspired textures that blend seamlessly with FFXIV's dark aesthetic. Limited-time release!</p>
+            <button class="btn">Get the Mod</button>
+        </div>
+    </section>
+    <!-- Product Info -->
+    <section class="product-info">
+        <h2>Why Choose AnaBear?</h2>
+        <p>Glamour is the true endgame.</p>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-moon"></i>
+                <h3>Lore-Friendly</h3>
+                <p>Inspired by in-game factions (Ascians, Ishgard, etc.)</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-code-branch"></i>
+                <h3>Modular</h3>
+                <p>Mix-and-match layers for unique combos</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-user-check"></i>
+                <h3>Race-Tested</h3>
+                <p>Works on Viera, Hrothgar, and all others</p>
+            </div>
+        </div>
+    </section>
+    <!-- Shop -->
+    <section class="shop">
+        <h2>Mod Collection</h2>
+        <!-- <p>All mods priced at $5</p> -->
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/images/charm.png" alt="charm" style="width:100%"></div>
+                <div class="product-details">
+                    <h3 style="text-align: left; margin-bottom:0px; font-size: 25px;">Charmed</h3>
+                    <p style="text-align: left;">Red/black Zodiark-inspired textures</p>
+                    <div class="flexrow">
+                        <div class="price">$5</div>
+                        <button class="btn">Buy on Kofi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/images/charm.png" alt="charm" style="width:100%"></div>
+                <div class="product-details">
+                    <h3 style="text-align: left; margin-bottom:0px; font-size: 25px;">Relaxed</h3>
+                    <p style="text-align: left;">Red/black Zodiark-inspired textures</p>
+                    <div class="flexrow">
+                        <div class="price">$5</div>
+                        <button class="btn">Buy on Kofi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="assets/images/charm.png" alt="charm" style="width:100%"></div>
+                <div class="product-details">
+                    <h3 style="text-align: left; margin-bottom:0px; font-size: 25px;">Moody</h3>
+                    <p style="text-align: left;">Red/black Zodiark-inspired textures</p>
+                    <div class="flexrow">
+                        <div class="price">$5</div>
+                        <button class="btn">Buy on Kofi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Bio -->
+    <section class="bio">
+        <div class="bio-image">
+            <img src="assets/images/annabear.png" alt="AnaBear Creator">
+        </div>
+        <div class="bio-text">
+            <h2>The Modder Behind the Magic</h2>
+            <p class="script-font">"By the Twelve! I'm Ana, a DNC main and texture witch."</p>
+            <p>Since Shadowbringers, I've been creating dark fantasy mods that blend seamlessly with FFXIV's aesthetic. All mods are tested on all races.</p>
+            <p><span class="tooltip">Modding Ethics <span class="tooltiptext">No stolen assets, always credit references!</span></span></p>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <h2 class="script-font">AnaBear</h2>
+        <p>Dark glamour for darker adventures.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fa-solid fa-mug-saucer"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="copyright">© 2023 AnaBear | Not affiliated with SQUARE ENIX | Pay in Gil via PayPal</p>
+    </footer>
 </body>
+
 </html>
