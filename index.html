@@ -253,6 +253,10 @@
         padding: 80px 20px;
         text-align: center;
         background: linear-gradient(180deg, var(--void), #140c22);
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .products {
@@ -260,6 +264,8 @@
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 30px;
         margin-top: 40px;
+        flex-wrap: wrap;
+        max-width:  1400px;
     }
 
     .product-card {
@@ -539,16 +545,16 @@
     <section class="hero">
         <div class="hero-content">
             <h1 class="logo script-font">AnaBear</h1>
-            <p class="tagline">Dark, dreamy makeup mods for FFXIV — because your WoL deserves to slay in the void.</p>
-            <button class="btn">Browse Mods</button>
+            <p class="tagline">Ethereal textures infused with enchanted detail, woven to complement FFXIV's darker mystique. A witchy, from the shadows beyond the veil.</p>
+            <a href="https://ko-fi.com/anabear/shop" target="_blank"> <button class="btn">Browse our shop</button></a>
         </div>
     </section>
     <!-- New Parallax Section -->
     <section class="parallax">
         <div class="parallax-content">
-            <h2>Voidborn Collection</h2>
-            <p>Ascian-inspired textures that blend seamlessly with FFXIV's dark aesthetic. Limited-time release!</p>
-            <button class="btn">Get the Mod</button>
+            <h2>Ethereal Collection</h2>
+            <p>Unlock the arcane with our exclusive membership—gain eternal access to every future makeup mod, beautifully bundled in one enchanted collection.</p>
+            <a href="https://ko-fi.com/anabear/tiers" target="_blank"> <button class="btn">Buy our membership</button> </a>
         </div>
     </section>
     <!-- Product Info -->
@@ -558,18 +564,18 @@
         <div class="features">
             <div class="feature">
                 <i class="fas fa-moon"></i>
-                <h3>Lore-Friendly</h3>
-                <p>Inspired by in-game factions (Ascians, Ishgard, etc.)</p>
+                <h3>Signature Style</h3>
+                <p>a unique aesthetic not found in the base game, allowing players to express their characters with deeper personality and magical flair</p>
             </div>
             <div class="feature">
                 <i class="fas fa-code-branch"></i>
-                <h3>Modular</h3>
-                <p>Mix-and-match layers for unique combos</p>
+                <h3>Charm for Every Scene</h3>
+                <p>Enhances immersion with details that feel tailor-made for your character’s journey</p>
             </div>
             <div class="feature">
                 <i class="fas fa-user-check"></i>
                 <h3>Race-Tested</h3>
-                <p>Works on Viera, Hrothgar, and all others</p>
+                <p>Works on female Miq'ote, Au'Ra and Viera</p>
             </div>
         </div>
     </section>
@@ -578,42 +584,6 @@
         <h2>Mod Collection</h2>
         <!-- <p>All mods priced at $5</p> -->
         <div class="products">
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="assets/images/charm.png" alt="charm" style="width:100%"></div>
-                <div class="product-details">
-                    <h3 style="text-align: left; margin-bottom:0px; font-size: 25px;">Charmed</h3>
-                    <p style="text-align: left;">Red/black Zodiark-inspired textures</p>
-                    <div class="flexrow">
-                        <div class="price">$5</div>
-                        <button class="btn">Buy on Kofi</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="assets/images/charm.png" alt="charm" style="width:100%"></div>
-                <div class="product-details">
-                    <h3 style="text-align: left; margin-bottom:0px; font-size: 25px;">Relaxed</h3>
-                    <p style="text-align: left;">Red/black Zodiark-inspired textures</p>
-                    <div class="flexrow">
-                        <div class="price">$5</div>
-                        <button class="btn">Buy on Kofi</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="assets/images/charm.png" alt="charm" style="width:100%"></div>
-                <div class="product-details">
-                    <h3 style="text-align: left; margin-bottom:0px; font-size: 25px;">Moody</h3>
-                    <p style="text-align: left;">Red/black Zodiark-inspired textures</p>
-                    <div class="flexrow">
-                        <div class="price">$5</div>
-                        <button class="btn">Buy on Kofi</button>
-                    </div>
-                </div>
-            </div>
         </div>
         </div>
     </section>
@@ -624,7 +594,7 @@
         </div>
         <div class="bio-text">
             <h2>The Modder Behind the Magic</h2>
-            <p class="script-font">"By the Twelve! I'm Ana, a DNC main and texture witch."</p>
+            <p class="script-font">"I’m Anabear—artist by soul, gamer by passion, raider by heart."</p>
             <p>Since Shadowbringers, I've been creating dark fantasy mods that blend seamlessly with FFXIV's aesthetic. All mods are tested on all races.</p>
             <p><span class="tooltip">Modding Ethics <span class="tooltiptext">No stolen assets, always credit references!</span></span></p>
         </div>
@@ -637,8 +607,138 @@
             <a href="#"><i class="fa-solid fa-mug-saucer"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-        <p class="copyright">© 2023 AnaBear | Not affiliated with SQUARE ENIX | Pay in Gil via PayPal</p>
+        <p class="copyright"> 2023 © AnaBear | Not affiliated with SQUARE ENIX</p>
     </footer>
 </body>
+<script>
+function createProductCard(imageSrc, title, description, price, buttonText, kofiLink) {
+    const container = document.querySelector('.products');
+
+    const card = document.createElement('div');
+    card.className = 'product-card';
+
+    card.innerHTML = `
+        <div class="product-image-container">
+            <img src="${imageSrc}" alt="${title}" style="width:100%">
+        </div>
+        <div class="product-details">
+            <h3 style="text-align: left; margin-bottom:0px; font-size: 25px;">${title}</h3>
+            <p style="text-align: left;">${description}</p>
+            <div class="flexrow">
+                <div class="price">${price}</div>
+                <a href="${kofiLink}" target="_blank">
+                    <button class="btn">${buttonText}</button>
+                </a>
+            </div>
+        </div>
+    `;
+
+    container.appendChild(card);
+}
+
+
+createProductCard(
+    'assets/images/ethereal.jpeg',
+    'Ethereal',
+    'Red/black Zodiark-inspired textures',
+    '$25',
+    'Become a member',
+    'https://ko-fi.com/s/fd71235949'
+);
+
+createProductCard(
+    'assets/images/prism.jpeg',
+    'Prism',
+    'Red/black Zodiark-inspired textures',
+    '$5',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/306fd40db2'
+);
+
+
+createProductCard(
+    'assets/images/void.jpeg',
+    'Void',
+    'Red/black Zodiark-inspired textures',
+    '$0',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/8532c1b409'
+);
+
+
+createProductCard(
+    'assets/images/aspen.jpeg',
+    'Aspen',
+    'Red/black Zodiark-inspired textures',
+    '$5',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/73265be4ef'
+);
+
+
+createProductCard(
+    'assets/images/moscato.jpeg',
+    'Moscato',
+    'Red/black Zodiark-inspired textures',
+    '$0',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/d7058737b2'
+);
+
+
+
+createProductCard(
+    'assets/images/riot.jpeg',
+    'Riot',
+    'Red/black Zodiark-inspired textures',
+    '$5',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/a90efc7b28'
+);
+createProductCard(
+    'assets/images/mood.jpeg',
+    'Mood',
+    'Red/black Zodiark-inspired textures',
+    '$5',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/27664e9a4b'
+);
+
+createProductCard(
+    'assets/images/stella.jpeg',
+    'Stella',
+    'Red/black Zodiark-inspired textures',
+    '$5',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/6eaa0acf86'
+);
+
+createProductCard(
+    'assets/images/peach.jpeg',
+    'Peach',
+    'Red/black Zodiark-inspired textures',
+    '$0',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/950fe7f324'
+);
+
+createProductCard(
+    'assets/images/apple.jpeg',
+    'Apple',
+    'Red/black Zodiark-inspired textures',
+    '$5',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/9ad066288b'
+);
+
+createProductCard(
+    'assets/images/charm.png',
+    'Charm',
+    'Red/black Zodiark-inspired textures',
+    '$0',
+    'Buy on Kofi',
+    'https://ko-fi.com/s/8ef2a3213d'
+);
+</script>
 
 </html>
